@@ -434,7 +434,27 @@ paths:
       - statistics
   /api/v1/tickets:
     get:
-      responses: {}
+      consumes:
+      - application/json
+      description: List all tickets logged in the system
+      parameters:
+      - description: Page number
+        in: query
+        name: page
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Ticket'
+            type: array
+      summary: Get all tickets
+      tags:
+      - tickets
     post:
       consumes:
       - application/json

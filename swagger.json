@@ -201,7 +201,37 @@
     },
     "/api/v1/tickets": {
       "get": {
-        "responses": {}
+        "parameters": [
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/models.Ticket"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "tickets"
+        ],
+        "description": "List all tickets logged in the system",
+        "summary": "Get all tickets"
       },
       "post": {
         "responses": {

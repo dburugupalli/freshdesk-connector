@@ -16,7 +16,6 @@ import (
 // @Produce  json
 // @Param page query string true "Page number"
 // @Success 200 {object} []models.Ticket
-
 // @Router /api/v1/tickets [get]
 func (a *App) getAllTickets(w http.ResponseWriter, r *http.Request) {
 
