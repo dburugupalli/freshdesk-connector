@@ -164,6 +164,32 @@ func GetTicketsPerAgent(url string, apiKey, agentId string, page string) *models
 	return searchResult
 }
 
+func GetTicketsCreatedAt(url string, apiKey, createdAt string, page string) *models.SearchResults {
+
+	if page == "" {
+		page = "1"
+	}
+	baseUrl := url + "/api/v2/search/tickets?page=" + page + "&query="
+
+	if createdAt != "" {
+		baseUrl = baseUrl + "\"created_at:>'" + createdAt + "'\""
+	}
+	req, err := http.NewRequest("GET", baseUrl, nil)
+	if err != nil {
+		return nil
+	}
+	var searchResult *models.SearchResults
+
+	res := makeHttpReq(apiKey, req)
+
+	// Convert response body to target struct
+	err = json.Unmarshal(res, &searchResult)
+	if err != nil {
+		return nil
+	}
+	return searchResult
+}
+
 func GetTicketsPerGroup(url string, apiKey, groupId string, page string) *models.SearchResults {
 
 	if page == "" {

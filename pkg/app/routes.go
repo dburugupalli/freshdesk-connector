@@ -19,6 +19,7 @@ func (a *App) initializeRoutes() {
 	// stats
 	a.Router.HandleFunc(apiV1+"/stats/agent/{agent_id}", a.getStatsForAgent).Methods("GET", "OPTIONS")
 	a.Router.HandleFunc(apiV1+"/stats/group/{group_id}", a.getStatsForGroup).Methods("GET", "OPTIONS")
+	a.Router.HandleFunc(apiV1+"/stats/date/{created_at}", a.getStatsForTicketsSinceDate).Methods("GET", "OPTIONS")
 
 	// agents
 	a.Router.HandleFunc(apiV1+"/agents", a.getAgents).Methods("GET", "OPTIONS")

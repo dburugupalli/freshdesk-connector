@@ -14,7 +14,7 @@ import (
 // @Tags tickets
 // @Accept  json
 // @Produce  json
-// @Param page query string true "Page number"
+// @Param page query string false "Page number"
 // @Success 200 {object} []models.Ticket
 // @Router /api/v1/tickets [get]
 func (a *App) getAllTickets(w http.ResponseWriter, r *http.Request) {
@@ -51,7 +51,7 @@ func (a *App) getAllTickets(w http.ResponseWriter, r *http.Request) {
 // @Tags tickets
 // @Accept  json
 // @Produce  json
-// @Param id path string true "Enter ticket id"
+// @Param id path string false "Enter ticket id"
 // @Success 200 {object} models.Ticket
 // @Router /api/v1/tickets/{id} [get]
 func (a *App) getSingleTicket(w http.ResponseWriter, r *http.Request) {
@@ -84,7 +84,7 @@ func (a *App) getSingleTicket(w http.ResponseWriter, r *http.Request) {
 // @Tags tickets
 // @Accept  json
 // @Produce  json
-// @Param text body models.Ticket true "Enter ticket properties"
+// @Param text body models.Ticket false "Enter ticket properties"
 // @Success 200 {object} object
 // @Router /api/v1/tickets [post]
 func (a *App) createTicket(w http.ResponseWriter, r *http.Request) {

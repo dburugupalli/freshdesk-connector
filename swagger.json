@@ -133,7 +133,6 @@
             "description": "Page number",
             "in": "query",
             "name": "page",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -158,6 +157,46 @@
         "summary": "Get ticket statistics for a particular agent"
       }
     },
+    "/api/v1/stats/date/{created_at}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Enter created_at",
+            "in": "path",
+            "name": "created_at",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/models.AllTickets"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "statistics"
+        ],
+        "description": "Get ticket statistics for tickets created since a particular date",
+        "summary": "Get ticket statistics for tickets created since a particular date"
+      }
+    },
     "/api/v1/stats/group/{group_id}": {
       "get": {
         "parameters": [
@@ -174,7 +213,6 @@
             "description": "Page number",
             "in": "query",
             "name": "page",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -206,7 +244,6 @@
             "description": "Page number",
             "in": "query",
             "name": "page",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -258,8 +295,7 @@
               }
             }
           },
-          "description": "Enter ticket properties",
-          "required": true
+          "description": "Enter ticket properties"
         },
         "summary": "Create new ticket"
       }

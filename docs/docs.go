@@ -152,8 +152,45 @@ const docTemplate = `{
                         "type": "string",
                         "description": "Page number",
                         "name": "page",
-                        "in": "query",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllTickets"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/stats/date/{created_at}": {
+            "get": {
+                "description": "Get ticket statistics for tickets created since a particular date",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "statistics"
+                ],
+                "summary": "Get ticket statistics for tickets created since a particular date",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Enter created_at",
+                        "name": "created_at",
+                        "in": "path",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Page number",
+                        "name": "page",
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -191,8 +228,7 @@ const docTemplate = `{
                         "type": "string",
                         "description": "Page number",
                         "name": "page",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -223,8 +259,7 @@ const docTemplate = `{
                         "type": "string",
                         "description": "Page number",
                         "name": "page",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -256,7 +291,6 @@ const docTemplate = `{
                         "description": "Enter ticket properties",
                         "name": "text",
                         "in": "body",
-                        "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.Ticket"
                         }
@@ -290,8 +324,7 @@ const docTemplate = `{
                         "type": "string",
                         "description": "Enter ticket id",
                         "name": "id",
-                        "in": "path",
-                        "required": true
+                        "in": "path"
                     }
                 ],
                 "responses": {

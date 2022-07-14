@@ -394,7 +394,6 @@ paths:
       - description: Page number
         in: query
         name: page
-        required: true
         type: string
       produces:
       - application/json
@@ -404,6 +403,31 @@ paths:
           schema:
             $ref: '#/definitions/models.AllTickets'
       summary: Get ticket statistics for a particular agent
+      tags:
+      - statistics
+  /api/v1/stats/date/{created_at}:
+    get:
+      consumes:
+      - application/json
+      description: Get ticket statistics for tickets created since a particular date
+      parameters:
+      - description: Enter created_at
+        in: path
+        name: created_at
+        required: true
+        type: string
+      - description: Page number
+        in: query
+        name: page
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllTickets'
+      summary: Get ticket statistics for tickets created since a particular date
       tags:
       - statistics
   /api/v1/stats/group/{group_id}:
@@ -420,7 +444,6 @@ paths:
       - description: Page number
         in: query
         name: page
-        required: true
         type: string
       produces:
       - application/json
@@ -441,7 +464,6 @@ paths:
       - description: Page number
         in: query
         name: page
-        required: true
         type: string
       produces:
       - application/json
@@ -463,7 +485,6 @@ paths:
       - description: Enter ticket properties
         in: body
         name: text
-        required: true
         schema:
           $ref: '#/definitions/models.Ticket'
       produces:
@@ -505,7 +526,6 @@ paths:
       - description: Enter ticket id
         in: path
         name: id
-        required: true
         type: string
       produces:
       - application/json
