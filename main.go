@@ -2,17 +2,17 @@ package main
 
 import (
 	"fmt"
+	"net/http"
+	"strconv"
+
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"net/http"
-	"strconv"
-
-	"github.com/kosha/freshdesk-connector/pkg/app"
-	"github.com/kosha/freshdesk-connector/pkg/logger"
 
 	_ "github.com/kosha/freshdesk-connector/docs"
+	"github.com/kosha/freshdesk-connector/pkg/app"
+	"github.com/kosha/freshdesk-connector/pkg/logger"
 )
 
 var (
