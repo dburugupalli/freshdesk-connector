@@ -52,6 +52,7 @@ func GetAllTickets(url string, apiKey, pageNum string) []*models.Ticket {
 func GetAgents(url string, apiKey string) []*models.Agent {
 	req, err := http.NewRequest("GET", url+"/api/v2/agents", nil)
 	if err != nil {
+		fmt.Println(err)
 		return nil
 	}
 	var agents []*models.Agent
@@ -61,6 +62,7 @@ func GetAgents(url string, apiKey string) []*models.Agent {
 	// Convert response body to target struct
 	err = json.Unmarshal(res, &agents)
 	if err != nil {
+		fmt.Println(err)
 		return nil
 	}
 	return agents

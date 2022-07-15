@@ -481,9 +481,7 @@ const docTemplate = `{
                             "type": "string"
                         },
                         "last_login_at": {},
-                        "mobile": {
-                            "type": "integer"
-                        },
+                        "mobile": {},
                         "name": {
                             "type": "string"
                         },

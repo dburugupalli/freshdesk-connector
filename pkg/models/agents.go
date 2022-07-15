@@ -18,7 +18,7 @@ type Agent struct {
 		JobTitle    string      `json:"job_title,omitempty"`
 		Language    string      `json:"language,omitempty"`
 		LastLoginAt interface{} `json:"last_login_at,omitempty"`
-		Mobile      int64       `json:"mobile,omitempty"`
+		Mobile      interface{} `json:"mobile,omitempty"`
 		Name        string      `json:"name,omitempty"`
 		Phone       string      `json:"phone,omitempty"`
 		TimeZone    string      `json:"time_zone,omitempty"`
