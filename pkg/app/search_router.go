@@ -12,7 +12,7 @@ import (
 // @Tags search
 // @Accept  json
 // @Produce  json
-// @Param query query string true "Enter query parameter e.g., query=\"priority:>2\"
+// @Param query query string true "Enter query parameter e.g., query=priority:>2"
 // @Success 200 {object} models.SearchResults
 // @Router /api/v1/search [get]
 func (a *App) searchTickets(w http.ResponseWriter, r *http.Request) {

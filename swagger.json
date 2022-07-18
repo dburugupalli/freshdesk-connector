@@ -89,7 +89,7 @@
       "get": {
         "parameters": [
           {
-            "description": "Enter query parameter e.g., query=\\",
+            "description": "Enter query parameter e.g., query=priority:>2",
             "in": "query",
             "name": "query",
             "required": true,
