@@ -127,6 +127,62 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/v1/specification/list": {
+            "get": {
+                "description": "Get all environment variables that need to be supplied",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "specification"
+                ],
+                "summary": "Get details of the connector specification",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/specification/test": {
+            "post": {
+                "description": "Check if domain account can be verified",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "specification"
+                ],
+                "summary": "Test if API key and domain name work against the specification",
+                "parameters": [
+                    {
+                        "description": "Enter api key and domain name properties",
+                        "name": "text",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/models.Specification"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Account"
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/stats/agent/{agent_id}": {
             "get": {
                 "description": "Get ticket statistics for a particular agent id",
@@ -655,6 +711,17 @@ const docTemplate = `{
                 },
                 "total": {
                     "type": "integer"
+                }
+            }
+        },
+        "models.Specification": {
+            "type": "object",
+            "properties": {
+                "api_key": {
+                    "type": "string"
+                },
+                "domain_name": {
+                    "type": "string"
                 }
             }
         },

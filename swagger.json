@@ -117,6 +117,58 @@
         "summary": "Search tickets"
       }
     },
+    "/api/v1/specification/list": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "specification"
+        ],
+        "description": "Get all environment variables that need to be supplied",
+        "summary": "Get details of the connector specification"
+      }
+    },
+    "/api/v1/specification/test": {
+      "post": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/models.Account"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "specification"
+        ],
+        "description": "Check if domain account can be verified",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/models.Specification"
+              }
+            }
+          },
+          "description": "Enter api key and domain name properties"
+        },
+        "summary": "Test if API key and domain name work against the specification"
+      }
+    },
     "/api/v1/stats/agent/{agent_id}": {
       "get": {
         "parameters": [
@@ -650,6 +702,17 @@
           },
           "total": {
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "models.Specification": {
+        "properties": {
+          "api_key": {
+            "type": "string"
+          },
+          "domain_name": {
+            "type": "string"
           }
         },
         "type": "object"

@@ -189,6 +189,13 @@ definitions:
       total:
         type: integer
     type: object
+  models.Specification:
+    properties:
+      api_key:
+        type: string
+      domain_name:
+        type: string
+    type: object
   models.Ticket:
     properties:
       associated_tickets_count: {}
@@ -379,6 +386,42 @@ paths:
       summary: Search tickets
       tags:
       - search
+  /api/v1/specification/list:
+    get:
+      consumes:
+      - application/json
+      description: Get all environment variables that need to be supplied
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      summary: Get details of the connector specification
+      tags:
+      - specification
+  /api/v1/specification/test:
+    post:
+      consumes:
+      - application/json
+      description: Check if domain account can be verified
+      parameters:
+      - description: Enter api key and domain name properties
+        in: body
+        name: text
+        schema:
+          $ref: '#/definitions/models.Specification'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Account'
+      summary: Test if API key and domain name work against the specification
+      tags:
+      - specification
   /api/v1/stats/agent/{agent_id}:
     get:
       consumes:
