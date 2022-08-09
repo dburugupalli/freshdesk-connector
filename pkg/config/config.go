@@ -2,7 +2,9 @@ package config
 
 import (
 	"flag"
+	"net/url"
 	"os"
+	"strings"
 )
 
 type Config struct {
@@ -30,5 +32,12 @@ func (c *Config) GetDomainName() string {
 }
 
 func (c *Config) GetFreshDeskURL() string {
-	return "https://" + c.domainName + ".freshdesk.com"
+	u, err := url.Parse(c.domainName)
+	if err != nil || u.Scheme == "" || u.Host == "" {
+		return "https://" + c.domainName + ".freshdesk.com"
+	} else if strings.Contains(c.domainName, "freshdesk.com") && u.Scheme == "" {
+		return "https://" + c.domainName
+	} else {
+		return c.domainName
+	}
 }
