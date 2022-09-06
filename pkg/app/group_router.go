@@ -12,6 +12,10 @@ import (
 // @Accept  json
 // @Produce  json
 // @Success 200 {object} []models.Group
+// @Failure      400  {object} string "bad request"
+// @Failure      403  {object}  string "permission denied"
+// @Failure      404  {object}  string "not found"
+// @Failure      500  {object}  string "internal server error"
 // @Router /api/v1/groups [get]
 func (a *App) getGroups(w http.ResponseWriter, r *http.Request) {
 

@@ -12,6 +12,10 @@ import (
 // @Accept  json
 // @Produce  json
 // @Success 200 {object} []models.Agent
+// @Failure      400  {object} string "bad request"
+// @Failure      403  {object}  string "permission denied"
+// @Failure      404  {object}  string "not found"
+// @Failure      500  {object}  string "internal server error"
 // @Router /api/v1/agents [get]
 func (a *App) getAgents(w http.ResponseWriter, r *http.Request) {
 

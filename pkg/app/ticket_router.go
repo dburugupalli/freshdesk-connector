@@ -53,6 +53,10 @@ func (a *App) getAllTickets(w http.ResponseWriter, r *http.Request) {
 // @Produce  json
 // @Param id path string false "Enter ticket id"
 // @Success 200 {object} models.Ticket
+// @Failure      400  {object} string "bad request"
+// @Failure      403  {object}  string "permission denied"
+// @Failure      404  {object}  string "not found"
+// @Failure      500  {object}  string "internal server error"
 // @Router /api/v1/tickets/{id} [get]
 func (a *App) getSingleTicket(w http.ResponseWriter, r *http.Request) {
 

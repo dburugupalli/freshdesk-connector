@@ -14,6 +14,10 @@ import (
 // @Produce  json
 // @Param query query string true "Enter query parameter e.g., query=priority:>2"
 // @Success 200 {object} models.SearchResults
+// @Failure      400  {object} string "bad request"
+// @Failure      403  {object}  string "permission denied"
+// @Failure      404  {object}  string "not found"
+// @Failure      500  {object}  string "internal server error"
 // @Router /api/v1/search [get]
 func (a *App) searchTickets(w http.ResponseWriter, r *http.Request) {
 

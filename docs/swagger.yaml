@@ -328,6 +328,22 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Account'
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get account detail
       tags:
       - account
@@ -345,6 +361,22 @@ paths:
             items:
               $ref: '#/definitions/models.Agent'
             type: array
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get freshdesk agents
       tags:
       - agents
@@ -362,6 +394,22 @@ paths:
             items:
               $ref: '#/definitions/models.Group'
             type: array
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get groups detail
       tags:
       - groups
@@ -383,6 +431,22 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.SearchResults'
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Search tickets
       tags:
       - search
@@ -398,6 +462,22 @@ paths:
           description: OK
           schema:
             type: object
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get details of the connector specification
       tags:
       - specification
@@ -419,6 +499,22 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Account'
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Test if API key and domain name work against the specification
       tags:
       - specification
@@ -444,6 +540,22 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllTickets'
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get ticket statistics for a particular agent
       tags:
       - statistics
@@ -469,6 +581,22 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllTickets'
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get ticket statistics for tickets created since a particular date
       tags:
       - statistics
@@ -494,6 +622,22 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllTickets'
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get ticket statistics for a particular group
       tags:
       - statistics
@@ -576,6 +720,22 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.Ticket'
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get single ticket
       tags:
       - tickets

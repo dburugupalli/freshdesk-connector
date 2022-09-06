@@ -16,6 +16,10 @@ import (
 // @Param agent_id path string true "Enter agent id"
 // @Param page query string false "Page number"
 // @Success 200 {object} models.AllTickets
+// @Failure      400  {object} string "bad request"
+// @Failure      403  {object}  string "permission denied"
+// @Failure      404  {object}  string "not found"
+// @Failure      500  {object}  string "internal server error"
 // @Router /api/v1/stats/agent/{agent_id} [get]
 func (a *App) getStatsForAgent(w http.ResponseWriter, r *http.Request) {
 
@@ -100,6 +104,10 @@ func (a *App) getStatsForAgent(w http.ResponseWriter, r *http.Request) {
 // @Param created_at path string true "Enter created_at"
 // @Param page query string false "Page number"
 // @Success 200 {object} models.AllTickets
+// @Failure      400  {object} string "bad request"
+// @Failure      403  {object}  string "permission denied"
+// @Failure      404  {object}  string "not found"
+// @Failure      500  {object}  string "internal server error"
 // @Router /api/v1/stats/date/{created_at} [get]
 func (a *App) getStatsForTicketsSinceDate(w http.ResponseWriter, r *http.Request) {
 
@@ -184,6 +192,10 @@ func (a *App) getStatsForTicketsSinceDate(w http.ResponseWriter, r *http.Request
 // @Param group_id path string true "Enter group id"
 // @Param page query string false "Page number"
 // @Success 200 {object} models.AllTickets
+// @Failure      400  {object} string "bad request"
+// @Failure      403  {object}  string "permission denied"
+// @Failure      404  {object}  string "not found"
+// @Failure      500  {object}  string "internal server error"
 // @Router /api/v1/stats/group/{group_id} [get]
 func (a *App) getStatsForGroup(w http.ResponseWriter, r *http.Request) {
 
