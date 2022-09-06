@@ -12,7 +12,7 @@ import (
 // @Tags search
 // @Accept  json
 // @Produce  json
-// @Param query query string true "Enter query parameter e.g., query=priority:>2"
+// @Param query query string true "Enter query parameter e.g., priority:>2 (in quotes)"
 // @Success 200 {object} models.SearchResults
 // @Failure      400  {object} string "bad request"
 // @Failure      403  {object}  string "permission denied"

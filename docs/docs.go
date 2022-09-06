@@ -183,7 +183,7 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "Enter query parameter e.g., query=priority:\u003e2",
+                        "description": "Enter query parameter e.g., priority:\u003e2 (in quotes)",
                         "name": "query",
                         "in": "query",
                         "required": true
